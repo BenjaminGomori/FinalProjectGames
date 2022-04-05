@@ -1,0 +1,25 @@
+﻿@model Game
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2 class="p-2">Delete game</h2>
+<table class="table">
+    <thead><tr><th>Name</th><th>Type</th><<th>Rating</th><th>Description</th></tr></thead>
+    <tbody>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.GameType</td>
+            <td>@Model.Rating</td>
+            <td>@Model.Description</td>
+        </tr>
+    </tbody>
+</table>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger mr-2">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

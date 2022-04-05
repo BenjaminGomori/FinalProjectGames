@@ -1,0 +1,27 @@
+﻿@model List<Game>
+
+@{
+    ViewData["Title"] = "Games";
+}
+    <h2 class="p-2">Games</h2>
+
+    <a asp-action="Add" class="btn btn-info mr-2">Add a game</a>
+
+    <table class="table table-striped mt-2">
+        <thead>
+            <tr><th>Name</th><th>Type</th><th>Rating</th><th>Description</th><th></th></tr>
+        </thead>
+        <tbody>
+            @foreach (Game game in Model)
+            {
+                <tr>
+                    <td>@game.Name</td>
+                    <td>@game.GameType</td>
+                    <td>@game.Rating</td>
+                    <td>@game.Description</td>
+                    <td><a asp-action="Delete" asp-route-id="@game.Id" class="btn btn-secondary">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <hr />
