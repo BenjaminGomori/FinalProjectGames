@@ -84,5 +84,11 @@ namespace FinalProjectGames.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [Route("[action]")]
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }
