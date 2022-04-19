@@ -39,6 +39,35 @@ namespace FinalProjectGames.Controllers
                 return View(game);
             }
         }
+        [HttpGet]
+        public ViewResult Edit(int id)
+        {
+            var game = data.Games.Find(id);
+            ViewBag.GameTypes = data.GameTypes.ToList();
+            return View(game);
+        }
+        [HttpPost]
+        public IActionResult Edit(Game game)
+        {
+            if (ModelState.IsValid)
+            {
+                if (game.Id == 0)
+                {
+                    data.Games.Add(game);
+                }
+                GameType gameType = data.GameTypes.Where(g => g.GameTypeId == game.GameTypeId).First();
+                game.GameType = gameType.Name;
+                data.Games.Update(game);
+                data.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Please correct all errors");
+                return View(game);
+            }
+        }
 
         [HttpGet]
         public ViewResult Delete(int id)

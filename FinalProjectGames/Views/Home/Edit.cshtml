@@ -1,0 +1,48 @@
+﻿@model Game
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+@section scripts {
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<h2 class="p-2">Edit game</h2>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" type="text" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    	<div class="form-group">
+		<label asp-for="GameTypeId">Genre</label>
+		<select asp-for="GameTypeId" class="form-controll">
+			<option value="">select a type</option>
+			@foreach(GameType t in ViewBag.GameTypes)
+			{
+				<option value="@t.GameTypeId">@t.Name</option>
+			}
+		</select>
+	</div>
+    <div class="form-group">
+        <label asp-for="Rating"></label>
+        <input asp-for="Rating" class="form-control"/>
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+        <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control"/>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-info mr-2">Update Game</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
