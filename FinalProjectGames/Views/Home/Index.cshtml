@@ -19,6 +19,7 @@
                     <td>@game.GameType</td>
                     <td>@game.Rating</td>
                     <td>@game.Description</td>
+                    <td><a asp-action="Edit"  asp-route-id="@game.Id" class="btn btn-secondary">Edit</a></td>
                     <td><a asp-action="Delete" asp-route-id="@game.Id" class="btn btn-secondary">Delete</a></td>
                 </tr>
             }
