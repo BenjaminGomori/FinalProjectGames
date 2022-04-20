@@ -46,35 +46,6 @@ namespace FinalProjectGames.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Games");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Play soccer with cars",
-                            GameType = "Video",
-                            GameTypeId = 0,
-                            Name = "Rocket League",
-                            Rating = 5
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Get rid of your cards before your opponents",
-                            GameType = "Card",
-                            GameTypeId = 0,
-                            Name = "Uno",
-                            Rating = 4
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Fight to the death with your favorite Kombatants",
-                            GameType = "Video",
-                            GameTypeId = 0,
-                            Name = "Mortal Kombat",
-                            Rating = 5
-                        });
                 });
 
             modelBuilder.Entity("FinalProjectGames.Models.GameType", b =>
@@ -89,7 +60,7 @@ namespace FinalProjectGames.Migrations
 
                     b.HasKey("GameTypeId");
 
-                    b.ToTable("GameTypes");
+                    b.ToTable("Types");
 
                     b.HasData(
                         new
