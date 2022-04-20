@@ -19,7 +19,6 @@ namespace FinalProjectGames.Models
                 new GameType { GameTypeId = 2, Name = "Board" },
                 new GameType { GameTypeId = 3, Name = "Cards" }
             );
-
         }
     }
 }
