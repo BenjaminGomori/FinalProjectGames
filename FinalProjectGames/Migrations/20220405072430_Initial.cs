@@ -64,7 +64,7 @@ namespace FinalProjectGames.Migrations
                 name: "Games");
 
             migrationBuilder.DropTable(
-                name: "Types");
+                name: "GameTypes");
         }
     }
 }

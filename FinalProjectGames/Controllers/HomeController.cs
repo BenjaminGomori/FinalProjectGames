@@ -92,6 +92,12 @@ namespace FinalProjectGames.Controllers
         }
 
         [Route("[action]")]
+        public IActionResult Person_Info()
+        {
+            return View();
+        }
+
+        [Route("[action]")]
         public IActionResult Privacy()
         {
             return View();
