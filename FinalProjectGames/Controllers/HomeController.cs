@@ -90,5 +90,11 @@ namespace FinalProjectGames.Controllers
         {
             return View();
         }
+
+        [Route("[action]")]
+        public IActionResult Person_Info()
+        {
+            return View();
+        }
     }
 }
