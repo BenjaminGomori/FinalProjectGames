@@ -33,6 +33,9 @@
                     <a class="nav-link
                         @(controller == "Home" && action == "About" ? "active" : "")"
                        asp-controller="Home" asp-action="About">About Us</a>
+                    <a class="nav-link
+                        @(controller == "Home" && action == "Person_Info" ? "active" : "")"
+                       asp-controller="Home" asp-action="Person_Info">Person Info</a>
                 </div>
             </nav>
         </nav>
@@ -49,7 +52,7 @@
 
     <footer>
         <hr />
-        <p style="text-align: center;">&copy; @DateTime.Now.Year - Proejct: Games</p>
+        <p style="text-align: center;">&copy; @DateTime.Now.Year - Project: Games</p>
     </footer>
 </body>
 </html>

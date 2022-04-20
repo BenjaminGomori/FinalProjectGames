@@ -60,7 +60,7 @@ namespace FinalProjectGames.Migrations
 
                     b.HasKey("GameTypeId");
 
-                    b.ToTable("Types");
+                    b.ToTable("GameTypes");
 
                     b.HasData(
                         new
