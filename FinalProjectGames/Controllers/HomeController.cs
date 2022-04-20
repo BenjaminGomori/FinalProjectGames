@@ -96,7 +96,7 @@ namespace FinalProjectGames.Controllers
         {
             return View();
         }
-
+        
         [Route("[action]")]
         public IActionResult Privacy()
         {
